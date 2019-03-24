@@ -12,7 +12,7 @@ At a high-level the script does the following:
 
 Detailed Workflow:
 1. Takes an IP address + optional 'slow' flag and runs a standard `nmap -sC -sV <target IP>` scan for default TCP ports
-2. Looks for non-default TCP ports with an `nmap -p (list of non-default nmap ports)` scan
+2. Looks for non-default TCP ports with a `masscan -p(list of non-default nmap ports) --rate=1000 -e tun0 <target IP>` scan
 4. If there are any results outside of the default nmap port range, the script will run a follow-up `nmap -sC -sV` scan on those ports
 5. Runs a top 500 ports `nmap -sU --top-ports 500 --defeat-icmp-ratelimit <target IP>` scan by default
 6. If there are any UDP ports discovered, the script will run a follow-up `nmap -sU -sC -sV` scan on those ports
@@ -29,7 +29,7 @@ Scouter is the result of me trying to speed up and automate my hackthebox.eu ini
 ### Masscan is very naughty! 
 Boy does masscan like to bug out over a VPN connection. I found that it regularly misses open UDP ports to the point that I could not rely on it. This problem persisted even if the scanning rate was decreased to 200 packets per second. 
 
-I also found that masscan likes to hang. It will display a counter telling you when it plans on exiting and this counter will plunge into the -300 second range on occasion. After some testing, I couldn't really find a reason to use masscan over nmap when trying to find out simply what TCP ports are open so I removed masscan from the script entirely. `nmap -p- <target>` is about twice as fast as `masscan -p1-65535 --rate=1000 -e tun0 <target>`.
+I also found that masscan likes to hang. It will display a counter telling you when it plans on exiting and this counter will plunge into the -300 second range on occasion. I put a function in the script called 'cop' which will run for 2 mins and then kill masscan in case it has hung on us. **Remember to change the hardcoded interface if you wish to scan a non-HTB network.** After some testing,  `nmap -p- <target>` is about twice as fast as `masscan -p1-65535 --rate=1000 -e tun0 <target>` when the nmap scan works correctly, however, this is not always the case. To be careful, I'm still relying on masscan because numerous times I've found that masscan will complete a all ports TCP scan faster than nmap -p- which will run forever in those instances.
 
 ###### WTF?
 The **weirdest** thing I discovered, was that if you run a UDP all-ports scan with masscan and simultaneously run an `nmap -sU` scan of any sort, the nmap results will be lightning quick. I have had idea why this worked, Daniel Miller on twitter (@bonsaiviking) said it is probably similar to using the `--defeat-icmp-ratelimit -sU` flag. You can find his explanation [here](https://twitter.com/bonsaiviking/status/1109492944598376448). One box I tested took 107 seconds without masscan to scan the nmap -sU top 100, and only took 3 seconds to scan the same range with masscan running concurrently. After some testing, I found that Daniel's --defeat-icmp-ratelimit flag was just as fast as running masscan concurrently. **Keep in mind that defeating the ICMP rate limit can lead to inaccurate results, so if you want to be careful use the slow flag.**
