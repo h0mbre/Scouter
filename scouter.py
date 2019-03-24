@@ -39,7 +39,7 @@ def nmap1():
 			currentDT = datetime.datetime.now()
 			zeTime = "[" + currentDT.strftime("%H:%M:%S") + "] "			
 			noTCP = 'No non-default TCP ports found.'
-         		print(Style.BRIGHT + Fore.YELLOW + zeTime + noTCP + Style.RESET_ALL)
+         		print(Style.BRIGHT + Fore.YELLOW + zeTime + noTCP + Style.RESET_ALL + '\n')
 			return
 	except:
 		currentDT = datetime.datetime.now()
