@@ -1,9 +1,15 @@
 # Scouter
 
-Scouter is used to automate a typical initial port-scanning workflow, particularly on hackthebox.eu. The script enumerates default/non-default TCP ports and either top 500 or top 100 UDP ports depending on scanning options. **Please keep in mind that it was tested specifically for the hackthebox VPN environment.**
+Scouter is used to automate a typical initial port-scanning workflow, particularly on hackthebox.eu. The script enumerates:
+1. default TCP ports (1000 ports)
+2. non-default TCP ports (the other 64000 ports)
+3. the top 500 UDP ports (or top 100 slowly if the 'slow' flag is set)
 
-Usage: `scouter.py 10.10.10.10` or `scouter.py 10.10.10.10 -s, --slow`
-The slow option will enable a slower, more accurate UDP scan for the top 100 ports. 
+**Please keep in mind that it was tested specifically for the hackthebox VPN environment.**
+
+Usage: 
+`scouter.py 10.10.10.10`
+`scouter.py 10.10.10.10 -s, --slow` ( 
 
 At a high-level the script does the following:
 1. Scans default nmap TCP port range
