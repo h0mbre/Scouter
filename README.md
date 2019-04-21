@@ -10,7 +10,7 @@ tags:
   - portscanner
   - HackTheBox
 --- 
-![](/assets/images/scouter.jpg)
+![](assets/images/scouter.jpg)
 
 # Scouter
 
