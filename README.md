@@ -4,7 +4,7 @@ title: Scouter
 date: 2019-4-20
 classes: wide
 header:
-  teaser: /assets/images/scouter.jpg
+  teaser: /Scouter/scouter.jpg
 tags:
   - Python
   - portscanner
