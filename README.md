@@ -1,3 +1,17 @@
+---
+layout: single
+title: Scouter
+date: 2019-4-20
+classes: wide
+header:
+  teaser: /assets/images/OSCP/pwk.png
+tags:
+  - Python
+  - portscanner
+  - HackTheBox
+--- 
+![](/assets/images/OSCP/OSCP.png)
+
 # Scouter
 
 Scouter is used to automate a typical initial port-scanning workflow, particularly on hackthebox.eu. The script enumerates:
