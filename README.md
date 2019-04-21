@@ -1,5 +1,3 @@
-
-
 # Scouter
 
 Scouter is used to automate a typical initial port-scanning workflow, particularly on hackthebox.eu. The script enumerates:
