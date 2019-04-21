@@ -9,24 +9,36 @@ Scouter is used to automate a typical initial port-scanning workflow, particular
 
 Usage: 
 `EXAMPLES:
+
 scouter.py 10.10.10.10 [OPTIONAL:outputformat] [OPTIONAL:interface] [OPTIONAL:UDP scan options]
+
 scouter.py 10.10.10.10
+
 scouter.py 10.10.10.10 -oN -i tun0 -s
+
 scouter.py 10.10.10.10 -oN --interface tun0 --slow
 
 OPTIONAL ARGUMENTS:
+
 OUTPUT:
-  -oA: save output in the nmap three major formats at once
-  -oN: save output in the nmap normal format
-  -oX: save output in the nmap XML format
-  -oS: save output in the nmap s|<rIpt kIddi3 format
-  -oG: save output in the nmap Grepable format
+
+-oA: save output in the nmap three major formats at once
+
+-oN: save output in the nmap normal format
+
+-oX: save output in the nmap XML format
+
+-oS: save output in the nmap s|<rIpt kIddi3 format
+
+-oG: save output in the nmap Grepable format
 
 INTERFACE:
-  -i, --interface: select an interface for masscan to scan against, default is tun0
+
+-i, --interface: select an interface for masscan to scan against, default is tun0
 
 UDP SCAN OPTIONS:
-  -s, --slow: enable slower UDP scan against the top 100 UDP ports, default is no rate limit scan of UDP top 500`
+
+-s, --slow: enable slower UDP scan against the top 100 UDP ports, default is no rate limit scan of UDP top 500`
 
 Detailed Workflow:
 1. Runs a standard `nmap -sC -sV <target IP>` scan for default TCP ports
