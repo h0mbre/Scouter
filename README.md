@@ -52,6 +52,8 @@ To dirsearch for color scheme inspiration (I just shamelessly ripped it off!)
 
 To Daniel Miller (@bonsaiviking)
 
+To ravish
+
 HMU on twitter @h0mbre_ if you get anything out of it! 
 
 
