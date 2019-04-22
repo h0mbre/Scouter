@@ -1,9 +1,11 @@
 # Scouter
 
-Scouter is used to automate a typical initial port-scanning workflow, particularly on hackthebox.eu. The script enumerates:
+Scouter is used to automate a typical initial port-scanning workflow, particularly on hackthebox.eu. The script concurrently enumerates:
 1. default TCP ports (1000 ports)
 2. non-default TCP ports (the other ~64500 ports)
-3. the top 500 UDP ports (or top 100 slowly if the 'slow' flag is set)
+3. the top 500 UDP ports (or top 100 slowly if the 'slow' flag is set) 
+
+
 
 **Please keep in mind that it was tested specifically for the hackthebox VPN environment.**
 
