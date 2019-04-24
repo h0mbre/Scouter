@@ -32,7 +32,7 @@ UDP scan options:
   -s, --slow: enable slower UDP scan against the top 100 UDP ports, default is no rate limit scan of UDP top 500"""
 
 #doing argument parsing
-parser = argparse.ArgumentParser(add_help=False, usage= helpMessage)
+parser = argparse.ArgumentParser(add_help=False, usage=helpMessage)
 parser.add_argument("host", type=str, help="ip address of target")
 parser.add_argument("-s", "--slow", help="enable a slower, more accurate UDP scan",
                     action="store_true")
