@@ -13,24 +13,23 @@ from colorama import *
 
 #just setting up a custom help message
 helpMessage = """
-EXAMPLES:
-scouter.py 10.10.10.10 [OPTIONAL:outputformat] [OPTIONAL:interface] [OPTIONAL:UDP scan options]
+Examples:
+scouter.py 10.10.10.10 [Output] [Interface] [UDP Scan Options]
 scouter.py 10.10.10.10
 scouter.py 10.10.10.10 -oN -i tun0 -s
 scouter.py 10.10.10.10 -oN --interface tun0 --slow
 
-OPTIONAL ARGUMENTS:
-OUTPUT:
+Output:
   -oA: save output in the nmap three major formats at once
   -oN: save output in the nmap normal format
   -oX: save output in the nmap XML format
   -oS: save output in the nmap s|<rIpt kIddi3 format
   -oG: save output in the nmap Grepable format
 
-INTERFACE:
+Interface:
   -i, --interface: select an interface for masscan to scan against, default is tun0
 
-UDP SCAN OPTIONS:
+UDP Scan Options:
   -s, --slow: enable slower UDP scan against the top 100 UDP ports, default is no rate limit scan of UDP top 500"""
 
 #doing argument parsing
