@@ -13,10 +13,10 @@ from colorama import *
 
 #just setting up a custom help message
 helpMessage = """
-scouter.py 10.10.10.10 [output] [interface] [UDP scan options]
-scouter.py 10.10.10.10
-scouter.py 10.10.10.10 -oN -i tun0 -s
-scouter.py 10.10.10.10 -oN --interface tun0 --slow
+  scouter.py 10.10.10.10 [output] [interface] [UDP scan options]
+  scouter.py 10.10.10.10
+  scouter.py 10.10.10.10 -oN -i tun0 -s
+  scouter.py 10.10.10.10 -oN --interface tun0 --slow
 
 output:
   -oA: save output in the nmap three major formats at once
