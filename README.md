@@ -1,5 +1,7 @@
 # Scouter
 
+![](/assets/images/Scouter/vegeta.jpg)
+
 Scouter is used to automate a typical initial port-scanning workflow, particularly on hackthebox.eu. The script concurrently enumerates:
 1. default TCP ports (1000 ports)
 2. non-default TCP ports (the other ~64500 ports)
